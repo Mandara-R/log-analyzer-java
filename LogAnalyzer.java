@@ -37,7 +37,7 @@ public class LogAnalyzer {
 
                 if (line.toLowerCase().contains("invalid password")) {
                     failedLoginCount++;
-                    System.out.println("⚠️ " + line);
+                    System.out.println("" + line);
                 }
             }
 
@@ -62,18 +62,18 @@ public class LogAnalyzer {
             System.out.println("Failed Login Attempts: " + failedLoginCount);
 
             if (failedLoginCount >= 3) {
-                System.out.println("🚨 ALERT: Suspicious Activity Detected!");
+                System.out.println("ALERT: Suspicious Activity Detected!");
             } else {
-                System.out.println("✅ System looks safe.");
+                System.out.println("System looks safe.");
             }
 
             if (!mostFrequentError.isEmpty()) {
                 System.out.println("\nMost Frequent Error:");
-                System.out.println("👉 " + mostFrequentError + " (" + maxCount + " times)");
+                System.out.println( mostFrequentError + " (" + maxCount + " times)");
             }
 
         } catch (IOException e) {
-            System.out.println("❌ Error: File not found or cannot be read.");
+            System.out.println(" Error: File not found or cannot be read.");
         }
 
         sc.close();
